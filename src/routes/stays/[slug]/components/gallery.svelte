@@ -5,11 +5,12 @@
 	import Swiper from 'swiper';
 	import 'swiper/css';
 
-	let { images } = $props();
+	let { images, active, close } = $props();
+
 	onMount(() => {
-		const swiper = new Swiper('.zoom-swiper', {
-			spaceBetween: 0,
-			loop: true,
+		new Swiper('.zoom-swiper', {
+			slidesPerView: 1,
+			// loop: true,
 			pagination: {
 				el: '.zoom_pag span',
 				type: 'fraction'
@@ -22,9 +23,9 @@
 	});
 </script>
 
-<div class="zoom_ active">
+<div class="zoom_" class:active>
 	<div class="zoom_pag">(<span></span>)</div>
-	<button class="zoom_close">
+	<button class="zoom_close" onclick={close}>
 		<Close />
 	</button>
 
@@ -35,9 +36,11 @@
 	<div class="swiper_">
 		<div class="swiper zoom-swiper no-select">
 			<div class="swiper-wrapper">
-				{#each images as img, i}
+				{#each images as img}
 					<div class="swiper-slide">
-						<img src={img?.fields?.file?.url} alt="" />
+						<figure>
+							<img src={img?.fields?.file?.url} alt="" />
+						</figure>
 					</div>
 				{/each}
 			</div>
@@ -62,6 +65,7 @@
 		opacity: 0;
 		pointer-events: none;
 		transition: opacity 0.3s ease-out;
+		padding: 10vw 10vh;
 	}
 	.zoom_.active {
 		opacity: 1;
@@ -94,17 +98,20 @@
 	#zoom-gallery-prev :global(svg) {
 		transform: rotate(180deg);
 	}
-
 	.swiper_ {
 		height: 100%;
-		aspect-ratio: 4/5;
 		margin-inline: auto;
-		max-width: fit-content;
 	}
-
-	.zoom-swiper .product_fig {
+	.zoom-swiper {
 		height: 100%;
-		width: unset;
-		margin-inline: auto;
+		figure {
+			width: 100%;
+			height: 100%;
+			display: flex;
+			justify-content: center;
+		}
+		img {
+			width: unset;
+		}
 	}
 </style>

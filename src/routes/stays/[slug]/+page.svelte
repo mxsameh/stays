@@ -5,15 +5,17 @@
 	import RichText from '$lib/components/richText.svelte';
 	import Ichev from '$lib/assets/icons/chev.svelte';
 	import { onMount } from 'svelte';
-	// import Gallery from './components/gallery.svelte';
+	import Gallery from './components/gallery.svelte';
 	import Swiper from 'swiper/bundle';
 	import 'swiper/css';
 
 	let { data } = $props();
 	const { prp } = data as any;
 	let IsAmenOp = $state(false);
+	let IsGalOp = $state(false);
+
 	onMount(() => {
-		new Swiper('.swiper', {
+		new Swiper('.s-rev .swiper', {
 			slidesPerView: 2,
 			spaceBetween: '120rem',
 			loop: true,
@@ -27,12 +29,12 @@
 
 <main>
 	<section class="s-gal">
+		<button onclick={() => (IsGalOp = true)}>VIEW GALLERY</button>
 		<figure>
 			<img src={prp.heroImage?.fields?.file?.url} alt="" />
 		</figure>
+		<Gallery images={prp.images} active={IsGalOp} close={() => (IsGalOp = false)} />
 	</section>
-
-	<!-- <Gallery images={prp.images} /> -->
 
 	<section class="s-sp">
 		<div class="l">
@@ -122,14 +124,26 @@
 
 <style lang="scss">
 	main {
-		padding-top: var(--p-i);
+		/* padding-top: var(--p-i); */
 		padding-bottom: 80rem;
 		padding-inline: var(--p-i);
 	}
 	.s-gal {
+		position: relative;
 		figure {
 			height: 500rem;
 			background-color: #ddd;
+		}
+		button {
+			position: absolute;
+			right: 24rem;
+			top: 24rem;
+			color: white;
+			width: 140rem;
+			padding-block: 12rem;
+			background-color: black;
+			font-size: 14rem;
+			color: white;
 		}
 	}
 	.s-sp {
@@ -199,7 +213,6 @@
 			font-size: 16rem;
 			/* font-weight: bold; */
 			color: white;
-
 		}
 		.r button:last-of-type {
 			color: black;
@@ -247,7 +260,7 @@
 			margin-top: 80rem;
 			position: relative;
 		}
-		:global(.swiper) {
+		& :global(.swiper) {
 			width: 1200rem;
 			margin-inline: auto;
 			/* display: flex;

@@ -86,7 +86,7 @@
 
 <style lang="scss">
 	.p {
-		padding-top: 32rem;
+		/* padding-top: 32rem; */
 		padding-bottom: 80rem;
 	}
 	.s-hero {

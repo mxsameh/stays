@@ -40,6 +40,7 @@
 	</section>
 
 	<section class="s-spaces">
+		<h2>Our Spaces</h2>
 		<nav>
 			<button id="swiper-prev">
 				<Ichev />
@@ -65,10 +66,6 @@
 				{/each}
 			</div>
 		</div>
-	</section>
-
-	<section class="s-ab">
-		<h2>Our Spaces</h2>
 	</section>
 
 	<section class="s-rev">
@@ -121,11 +118,22 @@
 	.s-spaces {
 		margin-top: 80rem;
 		padding-inline: var(--p-i);
+		h2 {
+			/* text-align: right; */
+			font-size: 120rem;
+			font-weight: normal;
+			font-family: 'pf';
+			@media (width < 770px) {
+				font-size: 60rem;
+				line-height: 1;
+			}
+		}
 		nav {
 			display: flex;
 			gap: 16rem;
 			justify-content: flex-end;
 			margin-bottom: 24rem;
+			margin-top: 40rem;
 		}
 		button {
 			:global(svg) {
@@ -151,10 +159,16 @@
 		h3 {
 			font-size: 20rem;
 			font-weight: normal;
+			@media (width < 770px) {
+				font-size: 16rem;
+			}
 		}
 		p {
 			font-size: 16rem;
 			text-transform: uppercase;
+			@media (width < 770px) {
+				font-size: 14rem;
+			}
 		}
 	}
 	.s-ab {

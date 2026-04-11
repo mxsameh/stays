@@ -22,11 +22,12 @@
 		}
 
 		a {
-			width: 98rem;
+			width: 105rem;
 			display: block;
 			text-align: right;
 			@media (width < 770px) {
 				font-size: 14rem;
+				width: 98rem;
 			}
 		}
 		a:nth-child(2) {

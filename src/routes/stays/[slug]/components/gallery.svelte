@@ -10,7 +10,7 @@
 	onMount(() => {
 		new Swiper('.zoom-swiper', {
 			slidesPerView: 1,
-			// loop: true,
+			loop: true,
 			pagination: {
 				el: '.zoom_pag span',
 				type: 'fraction'
@@ -66,6 +66,9 @@
 		pointer-events: none;
 		transition: opacity 0.3s ease-out;
 		padding: 10vw 10vh;
+		@media (width < 770px) {
+			padding: 40rem var(--p-i);
+		}
 	}
 	.zoom_.active {
 		opacity: 1;
@@ -87,9 +90,14 @@
 		top: 50%;
 		transform: translateY(-50%);
 		left: 24px;
+		z-index: 99;
 		&:last-of-type {
 			left: unset;
 			right: 24px;
+		}
+		@media (width < 770px) {
+			top: unset;
+			bottom: 24rem;
 		}
 	}
 	.zoom_nav :global(svg) {
@@ -112,6 +120,11 @@
 		}
 		img {
 			width: unset;
+			@media (width < 770px) {
+				width: 100%;
+				height: unset;
+				object-fit: scale-down;
+			}
 		}
 	}
 </style>

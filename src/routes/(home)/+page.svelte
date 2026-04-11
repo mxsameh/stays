@@ -13,9 +13,16 @@
 
 	onMount(() => {
 		new Swiper('.swiper', {
-			slidesPerView: 3,
-			spaceBetween: '32rem',
-			// loop: true,
+			breakpoints: {
+				0: {
+					slidesPerView: 1,
+					spaceBetween: '32rem'
+				},
+				770: {
+					slidesPerView: 3,
+					spaceBetween: '16rem'
+				}
+			},
 			navigation: {
 				nextEl: '#swiper-next',
 				prevEl: '#swiper-prev'
@@ -104,6 +111,11 @@
 			font-weight: 500;
 			font-family: 'pf';
 			text-align: center;
+			@media (width < 770px) {
+				width: unset;
+				font-size: 28rem;
+				line-height: 1.1;
+			}
 		}
 	}
 	.s-spaces {
@@ -153,6 +165,10 @@
 			font-size: 120rem;
 			font-weight: normal;
 			font-family: 'pf';
+			@media (width < 770px) {
+				font-size: 60rem;
+				line-height: 1;
+			}
 		}
 	}
 	.s-rev {
@@ -163,6 +179,10 @@
 			font-size: 120rem;
 			font-weight: normal;
 			font-family: 'pf';
+			@media (width < 770px) {
+				font-size: 60rem;
+				line-height: 1;
+			}
 		}
 		ul {
 			margin-top: 80rem;
@@ -170,6 +190,11 @@
 			margin-inline: auto;
 			display: flex;
 			gap: 120rem;
+			@media (width < 770px) {
+				width: unset;
+				flex-direction: column;
+				gap: 40rem;
+			}
 		}
 		li {
 			display: flex;

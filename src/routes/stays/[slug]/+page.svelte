@@ -18,6 +18,15 @@
 		new Swiper('.s-rev .swiper', {
 			slidesPerView: 2,
 			spaceBetween: '120rem',
+			breakpoints: {
+				0: {
+					slidesPerView: 1
+				},
+				770: {
+					slidesPerView: 2,
+					spaceBetween: '120rem'
+				}
+			},
 			loop: true,
 			navigation: {
 				nextEl: '#swiper-next',
@@ -150,6 +159,11 @@
 		margin-top: 48rem;
 		display: flex;
 		gap: 32rem;
+		@media (width < 770px) {
+			flex-direction: column;
+			margin-top: 24rem;
+			gap: 40rem;
+		}
 
 		.l {
 			flex: 1;
@@ -160,14 +174,27 @@
 			font-weight: 500;
 			line-height: 64rem;
 			text-transform: uppercase;
+			@media (width < 770px) {
+				font-size: 28rem;
+				line-height: 1.1;
+			}
 		}
 		p {
 			margin-top: 24rem;
 			font-size: 20rem;
+			@media (width < 770px) {
+				font-size: 16rem;
+				margin-top: 16rem;
+			}
 		}
 		.info {
 			margin-top: 100rem;
 			display: flex;
+			@media (width < 770px) {
+				flex-direction: column;
+				gap: 16rem;
+				margin-top: 40rem;
+			}
 		}
 		.info li {
 			flex: 1;
@@ -175,6 +202,8 @@
 			align-items: center;
 			gap: 8rem;
 			font-size: 16rem;
+			@media (width < 770px) {
+			}
 		}
 		.info :global(svg) {
 			width: 20rem;
@@ -197,6 +226,10 @@
 			font-size: 16rem;
 			padding-bottom: 4rem;
 			border-bottom: 1px solid black;
+			@media (width < 770px) {
+				font-size: 14rem;
+				margin-top: 40rem;
+			}
 		}
 		.r {
 			flex: 1;
@@ -213,6 +246,9 @@
 			font-size: 16rem;
 			/* font-weight: bold; */
 			color: white;
+			@media (width < 770px) {
+				font-size: 14rem;
+			}
 		}
 		.r button:last-of-type {
 			color: black;
@@ -222,6 +258,9 @@
 			margin-top: 138rem;
 			height: 350rem;
 			background-color: #ddd;
+			@media (width < 770px) {
+				margin-top: 80rem;
+			}
 		}
 		.map :global(iframe) {
 			width: 100%;
@@ -232,29 +271,49 @@
 		margin-top: 120rem;
 		display: flex;
 		gap: 32rem;
+		@media (width < 770px) {
+			margin-top: 80rem;
+			flex-direction: column;
+			gap: 16rem;
+		}
 
 		h2 {
 			font-size: 120rem;
 			flex: 1;
 			font-family: 'pf';
 			font-weight: 400;
+			@media (width < 770px) {
+				font-size: 60rem;
+			}
 		}
 		p {
 			flex: 1;
 			font-size: 20rem;
 			line-height: 30rem;
 			padding-top: 38rem;
+			@media (width < 770px) {
+				padding-top: 24rem;
+				font-size: 16rem;
+				line-height: 1.4;
+				text-align: justify;
+			}
 		}
 	}
 	.s-rev {
 		margin-top: 120rem;
 		/* padding-inline: var(--p-i); */
+		@media (width < 770px) {
+			margin-top: 80rem;
+		}
 		h2 {
 			text-align: right;
 			font-size: 120rem;
 			font-weight: normal;
 			font-family: 'pf';
 			font-weight: 400;
+			@media (width < 770px) {
+				font-size: 60rem;
+			}
 		}
 		.swiper_ {
 			margin-top: 80rem;
@@ -265,6 +324,9 @@
 			margin-inline: auto;
 			/* display: flex;
 			gap: 120rem; */
+			@media (width < 770px) {
+				width: 100%;
+			}
 
 			.rev {
 				display: flex;
@@ -294,6 +356,13 @@
 			justify-content: space-between;
 			top: 50%;
 			transform: translateY(-50%);
+			@media (width < 770px) {
+				top: unset;
+				transform: translateY(100%);
+				bottom: -40rem;
+				justify-content: center;
+				gap: 16rem;
+			}
 		}
 		button {
 			width: 20rem;

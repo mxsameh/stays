@@ -1,5 +1,6 @@
 <script lang="ts">
-	import heI from '$lib/assets/images/he.png';
+	import heD from '$lib/assets/images/he.png';
+	import heM from '$lib/assets/images/he-m.png';
 	import Ichev from '$lib/assets/icons/chev.svelte';
 
 	import { onMount } from 'svelte';
@@ -34,7 +35,11 @@
 <main class="p">
 	<section class="s-hero">
 		<figure>
-			<img src={heI} alt="" />
+			<!-- <img src={heI} alt="" /> -->
+			<picture>
+				<source srcset={heD} media="(min-width: 770px)" />
+				<img src={heM} alt="Hero image" />
+			</picture>
 		</figure>
 		<h1>STAYS YOU WILL WANT TO COME BACK TO</h1>
 	</section>

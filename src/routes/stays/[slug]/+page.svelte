@@ -18,6 +18,8 @@
 		new Swiper('.s-rev .swiper', {
 			slidesPerView: 2,
 			spaceBetween: '120rem',
+			centerInsufficientSlides: true,
+
 			breakpoints: {
 				0: {
 					slidesPerView: 1
@@ -27,7 +29,7 @@
 					spaceBetween: '120rem'
 				}
 			},
-			loop: true,
+			// loop: true,
 			navigation: {
 				nextEl: '#swiper-next',
 				prevEl: '#swiper-prev'
@@ -98,36 +100,40 @@
 
 	<section class="s-rev">
 		<h2>Reviews</h2>
-		<div class="swiper_">
-			<nav>
-				<button id="swiper-prev">
-					<Ichev />
-				</button>
-				<button id="swiper-next">
-					<Ichev />
-				</button>
-			</nav>
+		{#if !prp.reviews}
+			<p class="no-r" style="text-align: center; opacity: 0.6; margin-top: 40rem">No Reviews Yet</p>
+		{:else}
+			<div class="swiper_">
+				<nav>
+					<button id="swiper-prev">
+						<Ichev />
+					</button>
+					<button id="swiper-next">
+						<Ichev />
+					</button>
+				</nav>
 
-			<div class="swiper">
-				<div class="swiper-wrapper">
-					{#each prp.reviews as rev}
-						<div class="swiper-slide">
-							<div class="rev">
-								<span>"</span>
-								<div>
-									<p>{rev.fields.review}</p>
-									<div class="info">
-										<span>{rev.fields.name}</span>
-										<span>{rev.fields.propertyName}</span>
+				<div class="swiper">
+					<div class="swiper-wrapper">
+						{#each prp.reviews as rev}
+							<div class="swiper-slide">
+								<div class="rev">
+									<span>"</span>
+									<div>
+										<p>{rev.fields.review}</p>
+										<div class="info">
+											<span>{rev.fields.name}</span>
+											<span>{rev.fields.propertyName}</span>
+										</div>
 									</div>
+									<span>"</span>
 								</div>
-								<span>"</span>
 							</div>
-						</div>
-					{/each}
+						{/each}
+					</div>
 				</div>
 			</div>
-		</div>
+		{/if}
 	</section>
 </main>
 
@@ -315,6 +321,16 @@
 				font-size: 60rem;
 			}
 		}
+		.no-r {
+			text-align: center;
+			opacity: 0.7;
+			margin-top: 80rem;
+			font-size: 18rem;
+			@media (width < 770px) {
+				margin-top: 40rem;
+				font-size: 16rem;
+			}
+		}
 		.swiper_ {
 			margin-top: 80rem;
 			position: relative;
@@ -337,6 +353,12 @@
 			.rev > div {
 				padding-top: 30rem;
 			}
+			p {
+				font-size: 18rem;
+				@media (width < 770px) {
+					font-size: 16rem;
+				}
+			}
 			.info {
 				margin-top: 24rem;
 				display: flex;
@@ -356,6 +378,7 @@
 			justify-content: space-between;
 			top: 50%;
 			transform: translateY(-50%);
+
 			@media (width < 770px) {
 				top: unset;
 				transform: translateY(100%);
@@ -363,6 +386,9 @@
 				justify-content: center;
 				gap: 16rem;
 			}
+		}
+		:global(.swiper-button-disabled) {
+			opacity: 0;
 		}
 		button {
 			width: 20rem;

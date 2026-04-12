@@ -22,8 +22,18 @@
 				We carefully select properties that align with our standards to ensure consistency, quality,
 				and strong performance.
 			</p>
+
+			<div>
+				<p>
+					<b>Interested in listing your property with us?</b> Send us a message on WhatsApp with a few
+					details about your property, such as its location, type, number of bedrooms, and any additional
+					information or listing links.
+				</p>
+				<a href="https://wa.me/201117630075" target="_blank"> +20 111 763 0075 </a>
+			</div>
 		</div>
 	</section>
+	<!-- 
 	<section>
 		<div class="l">
 			<h1>Work With Us</h1>
@@ -37,6 +47,7 @@
 			<a href="https://wa.me/201117630075" target="_blank"> +20 111 763 0075 </a>
 		</div>
 	</section>
+	 -->
 </main>
 
 <style>
@@ -90,6 +101,12 @@
 				font-size: 16rem;
 				line-height: unset;
 				margin-top: 16rem;
+			}
+		}
+		div {
+			margin-top: 100rem;
+			@media (width < 770px) {
+				margin-top: 60rem;
 			}
 		}
 		a {

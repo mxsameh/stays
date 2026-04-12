@@ -222,6 +222,13 @@
 			display: flex;
 			flex-direction: column;
 		}
+		p {
+			font-size: 18rem;
+			@media (width < 770px) {
+				font-size: 16rem;
+			}
+		}
+
 		.info {
 			margin-top: auto;
 			padding-top: 24rem;

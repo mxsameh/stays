@@ -59,7 +59,7 @@
 							</figure>
 							<div class="info">
 								<h3>{prp.name}</h3>
-								<p>(ZAMALEK)</p>
+								<p>({prp.location})</p>
 							</div>
 						</a>
 					</div>

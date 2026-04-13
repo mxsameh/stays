@@ -25,9 +25,10 @@
 
 			<div>
 				<p>
-					<b>Interested in listing your property with us?</b> Send us a message on WhatsApp with a few
-					details about your property, such as its location, type, number of bedrooms, and any additional
-					information or listing links.
+					<b>Interested in listing your property with us?</b>
+					<br />
+					Send us a message on WhatsApp with a few details about your property, such as its location,
+					type, number of bedrooms, and any additional information or listing links.
 				</p>
 				<a href="https://wa.me/201117630075" target="_blank"> +20 111 763 0075 </a>
 			</div>

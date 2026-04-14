@@ -297,6 +297,7 @@
 			font-size: 20rem;
 			line-height: 30rem;
 			padding-top: 38rem;
+			text-align: justify;
 			@media (width < 770px) {
 				padding-top: 24rem;
 				font-size: 16rem;
@@ -355,6 +356,7 @@
 			}
 			p {
 				font-size: 18rem;
+				text-align: justify;
 				@media (width < 770px) {
 					font-size: 16rem;
 				}

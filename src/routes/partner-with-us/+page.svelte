@@ -1,3 +1,7 @@
+<script>
+	import Whatsapp from '$lib/assets/icons/whatsapp.svelte';
+</script>
+
 <main>
 	<section>
 		<div class="l">
@@ -30,7 +34,10 @@
 					Send us a message on WhatsApp with a few details about your property, such as its location,
 					type, number of bedrooms, and any additional information or listing links.
 				</p>
-				<a href="https://wa.me/201117630075" target="_blank"> +20 111 763 0075 </a>
+				<a href="https://wa.me/201117630075" target="_blank">
+					<Whatsapp />
+					<span> +20 111 763 0075 </span>
+				</a>
 			</div>
 		</div>
 	</section>
@@ -95,6 +102,7 @@
 			font-size: 20rem;
 			line-height: 30rem;
 			margin-top: 30rem;
+			text-align: justify;
 			&:first-child {
 				margin-top: 0;
 			}
@@ -111,15 +119,24 @@
 			}
 		}
 		a {
-			display: inline-block;
+			display: flex;
+			align-items: flex-end;
+			gap: 16rem;
 			margin-top: 40rem;
-			font-family: 'pf';
-			font-size: 40rem;
-			padding-bottom: 4rem;
-			border-bottom: 1px solid #333;
+			:global(svg) {
+				width: 40rem;
+			}
+			span {
+				font-family: 'pf';
+				font-size: 40rem;
+				padding-bottom: 4rem;
+				border-bottom: 1px solid #333;
+			}
 			@media (width < 770px) {
 				margin-top: 32rem;
-				font-size: 30rem;
+				span {
+					font-size: 30rem;
+				}
 			}
 		}
 	}

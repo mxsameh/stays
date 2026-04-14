@@ -10,10 +10,11 @@
 	let { data } = $props();
 	const { prps, revs } = data as any;
 
-	const fRevs = revs.slice(0, 2);
+	// const fRevs = revs.slice(0, 2);
 
 	onMount(() => {
-		new Swiper('.swiper', {
+		new Swiper('.s-spaces .swiper', {
+			loop: true,
 			breakpoints: {
 				0: {
 					slidesPerView: 1,
@@ -25,8 +26,30 @@
 				}
 			},
 			navigation: {
-				nextEl: '#swiper-next',
-				prevEl: '#swiper-prev'
+				nextEl: '.s-spaces #swiper-next',
+				prevEl: '.s-spaces #swiper-prev'
+			}
+		});
+
+		new Swiper('.s-rev .swiper', {
+			slidesPerView: 2,
+			spaceBetween: '120rem',
+			loop: true,
+			centerInsufficientSlides: true,
+
+			breakpoints: {
+				0: {
+					slidesPerView: 1
+				},
+				770: {
+					slidesPerView: 2,
+					spaceBetween: '120rem'
+				}
+			},
+			// loop: true,
+			navigation: {
+				nextEl: '.s-rev #swiper-next',
+				prevEl: '.s-rev #swiper-prev'
 			}
 		});
 	});
@@ -75,21 +98,35 @@
 
 	<section class="s-rev">
 		<h2>Reviews</h2>
-		<ul>
-			{#each fRevs as rev}
-				<li>
-					<span>"</span>
-					<div>
-						<p>{rev.review}</p>
-						<div class="info">
-							<span>{rev.name}</span>
-							<span>{rev.propertyName}</span>
+		<div class="swiper_">
+			<nav>
+				<button id="swiper-prev">
+					<Ichev />
+				</button>
+				<button id="swiper-next">
+					<Ichev />
+				</button>
+			</nav>
+			<div class="swiper">
+				<div class="swiper-wrapper">
+					{#each revs as rev}
+						<div class="swiper-slide">
+							<div class="rev">
+								<span>"</span>
+								<div>
+									<p>{rev.review}</p>
+									<div class="info">
+										<span>{rev?.name}</span>
+										<span>{rev?.propertyName}</span>
+									</div>
+								</div>
+								<span>"</span>
+							</div>
 						</div>
-					</div>
-					<span>"</span>
-				</li>
-			{/each}
-		</ul>
+					{/each}
+				</div>
+			</div>
+		</div>
 	</section>
 </main>
 
@@ -203,48 +240,81 @@
 				line-height: 1;
 			}
 		}
-		ul {
-			margin-top: 80rem;
+		.swiper_ {
+			margin-top: 40rem;
+			position: relative;
+			@media (width < 770px) {
+				margin-top: 64rem;
+			}
+		}
+		& :global(.swiper) {
 			width: 1200rem;
 			margin-inline: auto;
-			display: flex;
-			gap: 120rem;
+			/* display: flex;
+			gap: 120rem; */
 			@media (width < 770px) {
-				width: unset;
-				flex-direction: column;
-				gap: 40rem;
+				width: 100%;
 			}
-		}
-		li {
-			display: flex;
-			flex: 1;
-		}
-		li > span {
-			font-size: 40rem;
-		}
-		li > div {
-			padding-top: 30rem;
-			display: flex;
-			flex-direction: column;
-		}
-		p {
-			font-size: 18rem;
-			@media (width < 770px) {
-				font-size: 16rem;
-			}
-		}
 
-		.info {
-			margin-top: auto;
-			padding-top: 24rem;
-			/* margin-top: 24rem; */
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
+			.rev {
+				display: flex;
+			}
+			.rev > span {
+				font-size: 40rem;
+			}
+			.rev > div {
+				padding-top: 30rem;
+			}
+			p {
+				font-size: 18rem;
+				text-align: justify;
+				@media (width < 770px) {
+					font-size: 16rem;
+				}
+			}
+			.info {
+				margin-top: 24rem;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+			}
+			.info span {
+				font-size: 16rem;
+				opacity: 0.6;
+			}
 		}
-		.info span {
-			font-size: 16rem;
-			opacity: 0.6;
+		/*
+		nav {
+			display: flex;
+			gap: 16rem;
+			justify-content: flex-start;
+			justify-content: center;
+			margin-bottom: 24rem;
+			margin-top: 40rem;
+			padding-left: calc(120rem - var(--p-i));
+		}
+		*/
+		nav {
+			width: 100%;
+			left: 0;
+			position: absolute;
+			display: flex;
+			justify-content: space-between;
+			top: 80rem;
+
+			@media (width < 770px) {
+				top: 0;
+				transform: translateY(-150%);
+				/* bottom: -40rem; */
+				justify-content: center;
+				gap: 16rem;
+			}
+		}
+		button {
+			width: 20rem;
+		}
+		button:first-child :global(svg) {
+			transform: rotate(180deg);
 		}
 	}
 </style>

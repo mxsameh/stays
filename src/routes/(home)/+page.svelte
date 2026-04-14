@@ -55,6 +55,14 @@
 	});
 </script>
 
+<svelte:head>
+	<title>Premium Short-Term Rentals in Egypt | Stays Hospitality</title>
+	<meta
+		name="description"
+		content="Experience thoughtfully designed short-term rentals with Stays Hospitality. From city apartments to coastal escapes, enjoy seamless stays tailored to modern living. Available in Cairo, Hurghada, Gouna, and the North Coast."
+	/>
+</svelte:head>
+
 <main class="p">
 	<section class="s-hero">
 		<figure>

@@ -239,7 +239,7 @@
 		margin-top: 120rem;
 		padding-inline: var(--p-i);
 		h2 {
-			text-align: right;
+			/* text-align: right; */
 			font-size: 120rem;
 			font-weight: normal;
 			font-family: 'pf';

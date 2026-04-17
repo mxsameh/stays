@@ -75,6 +75,7 @@
 			font-size: 20rem;
 			line-height: 30rem;
 			margin-top: 30rem;
+			text-align: justify;
 			&:first-child {
 				margin-top: 0;
 			}

@@ -321,7 +321,7 @@
 			margin-top: 80rem;
 		}
 		h2 {
-			text-align: right;
+			/* text-align: right; */
 			font-size: 120rem;
 			font-weight: normal;
 			font-family: 'pf';

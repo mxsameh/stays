@@ -307,14 +307,14 @@
 			left: 0;
 			position: absolute;
 			display: flex;
-			justify-content: flex-end;
+			justify-content: space-between;
 			top: 80rem;
 
 			@media (width < 770px) {
 				top: 0;
 				transform: translateY(-150%);
 				/* bottom: -40rem; */
-				justify-content: center;
+				justify-content: flex-end;
 				gap: 16rem;
 			}
 		}

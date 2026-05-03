@@ -307,7 +307,7 @@
 			left: 0;
 			position: absolute;
 			display: flex;
-			justify-content: space-between;
+			justify-content: flex-end;
 			top: 80rem;
 
 			@media (width < 770px) {

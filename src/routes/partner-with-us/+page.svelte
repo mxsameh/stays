@@ -1,5 +1,5 @@
 <script>
-	import Whatsapp from '$lib/assets/icons/whatsapp.svelte';
+	// import Whatsapp from '$lib/assets/icons/whatsapp.svelte';
 </script>
 
 <svelte:head>
@@ -42,10 +42,10 @@
 					Send us a message on WhatsApp with a few details about your property, such as its location,
 					type, number of bedrooms, and any additional information or listing links.
 				</p>
-				<a href="https://wa.me/201117630075" target="_blank">
+				<!-- <a href="https://wa.me/201117630075" target="_blank">
 					<Whatsapp />
 					<span> +20 111 763 0075 </span>
-				</a>
+				</a> -->
 			</div>
 		</div>
 	</section>

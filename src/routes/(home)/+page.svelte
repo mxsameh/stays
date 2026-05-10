@@ -36,7 +36,9 @@
 			spaceBetween: '120rem',
 			loop: true,
 			centerInsufficientSlides: true,
-
+			autoplay: {
+				delay: 10000
+			},
 			breakpoints: {
 				0: {
 					slidesPerView: 1

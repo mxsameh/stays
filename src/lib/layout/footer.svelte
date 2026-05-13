@@ -36,6 +36,11 @@
 		align-items: flex-end;
 		padding-bottom: 24rem;
 		/* border-top: 1px solid black; */
+		@media(width < 770px){
+			flex-direction: column-reverse;
+			align-items: center;
+		}
+
 	}
 	footer > a {
 		padding-bottom: 2rem;

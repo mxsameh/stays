@@ -79,29 +79,31 @@
 
 	<section class="s-spaces">
 		<h2>Our Spaces</h2>
-		<nav>
-			<button id="swiper-prev">
-				<Ichev />
-			</button>
-			<button id="swiper-next">
-				<Ichev />
-			</button>
-		</nav>
-		<div class="swiper">
-			<div class="swiper-wrapper">
-				{#each prps as prp}
-					<div class="swiper-slide">
-						<a href={`/stays/${prp.slug}`}>
-							<figure>
-								<img src={prp.heroImage?.fields.file.url} alt="" />
-							</figure>
-							<div class="info">
-								<h3>{prp.name}</h3>
-								<p>({prp.location})</p>
-							</div>
-						</a>
-					</div>
-				{/each}
+		<div class="swiper_">
+			<nav>
+				<button id="swiper-prev">
+					<Ichev />
+				</button>
+				<button id="swiper-next">
+					<Ichev />
+				</button>
+			</nav>
+			<div class="swiper">
+				<div class="swiper-wrapper">
+					{#each prps as prp}
+						<div class="swiper-slide">
+							<a href={`/stays/${prp.slug}`}>
+								<figure>
+									<img src={prp.heroImage?.fields.file.url} alt="" />
+								</figure>
+								<div class="info">
+									<h3>{prp.name}</h3>
+									<p>({prp.location})</p>
+								</div>
+							</a>
+						</div>
+					{/each}
+				</div>
 			</div>
 		</div>
 	</section>
@@ -180,12 +182,32 @@
 				line-height: 1;
 			}
 		}
+		.swiper_ {
+			position: relative;
+			margin-top: 40rem;
+		}
+		.swiper {
+			width: calc(100% - 80rem);
+			@media (width < 770px) {
+				width: 100%;
+			}
+		}
 		nav {
+			width: 100%;
+			position: absolute;
+			left: 0;
+			top: 50%;
+			transform: translateY(-50%);
+			z-index: 2;
 			display: flex;
 			gap: 16rem;
-			justify-content: flex-end;
-			margin-bottom: 24rem;
-			margin-top: 40rem;
+			justify-content: space-between;
+			@media (width < 770px) {
+				position: unset;
+				transform: unset;
+				justify-content: flex-end;
+				margin-bottom: 24rem;
+			}
 		}
 		button {
 			:global(svg) {

@@ -12,7 +12,7 @@
 	</div>
 	<div class="r">
 		<p>
-			With over 150 reservations and a 98% guest satisfaction rate, we’ve built a reputation for
+			With over 650 reservations and a 98% guest satisfaction rate, we’ve built a reputation for
 			creating seamless, memorable stays across Egypt.
 		</p>
 
